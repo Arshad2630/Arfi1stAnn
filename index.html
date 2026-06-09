@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy First Anniversary</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="ARFI wordmark">
+        <a class="brand-mark" href="#top" aria-label="#ARFI heart home">#ARFI ❤</a>
+      </nav>
+
+      <div class="hero-scene" aria-hidden="true">
+        <div class="moon"></div>
+        <div class="string-lights">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="balcony">
+          <div class="couple">
+            <span class="person person-one"></span>
+            <span class="person person-two"></span>
+          </div>
+        </div>
+      </div>
+
+      <section class="hero-copy">
+        <p class="arfi-kicker">#ARFI ❤</p>
+        <p class="eyebrow">Our first year together</p>
+        <h1>Happy 1st Anniversary, My Babe</h1>
+        <p>
+          One year of tiny jokes, long talks, favorite memories, and the kind of love
+          that makes ordinary days feel unforgettable.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#letter">Read my letter</a>
+          <a class="button ghost" href="#quiz">Take our quiz</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="band intro" id="counter">
+        <div class="intro-stat">
+          <strong id="daysTogether">365</strong>
+          <span>beautiful days</span>
+        </div>
+        <div>
+          <p class="eyebrow">Made just for you</p>
+          <h2>A little website for a very big feeling.</h2>
+          <p class="counter-note">
+            Since 27 May 2025, every day with you has been another reason to smile.
+          </p>
+        </div>
+      </section>
+
+      <section class="section live-counter">
+        <div class="section-heading">
+          <p class="eyebrow">Live love counter</p>
+          <h2>Counting every moment since we met</h2>
+        </div>
+        <div class="counter-grid" aria-live="polite">
+          <div><strong id="loveDays">0</strong><span>Days</span></div>
+          <div><strong id="loveHours">0</strong><span>Hours</span></div>
+          <div><strong id="loveMinutes">0</strong><span>Minutes</span></div>
+          <div><strong id="loveSeconds">0</strong><span>Seconds</span></div>
+        </div>
+        <p class="love-counter-message" id="loveCounterMessage">
+          From the day we met, my heart has been quietly collecting memories of you.
+        </p>
+      </section>
+
+      <section class="section" id="story">
+        <div class="section-heading">
+          <p class="eyebrow">Our story</p>
+          <h2>Our love timeline</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>27 May 2025</span>
+            <h3>When we first met 💫</h3>
+            <p>That day quietly became one of the most special chapters of my life. I did not know it yet, but my heart had just found someone unforgettable.</p>
+          </article>
+          <article>
+            <span>28 May 2025</span>
+            <h3>When we started talking 💬</h3>
+            <p>One conversation turned into another, and slowly you became the person I wanted to tell everything to. Talking to you started feeling like home.</p>
+          </article>
+          <article>
+            <span>15 Jun 2025</span>
+            <h3>Our first hug 🤗</h3>
+            <p>That hug was more than just a moment. It felt warm, safe, and beautiful, like my heart finally got to say what words could not.</p>
+          </article>
+          <article>
+            <span>07 Jul 2025</span>
+            <h3>Our first date together 🌹</h3>
+            <p>The first time we truly spent time together became a memory I keep close. Every second felt softer because you were beside me.</p>
+          </article>
+          <article>
+            <span>13 Jul 2025</span>
+            <h3>Our first day outside together 🌤️</h3>
+            <p>Walking outside with you felt simple and magical at the same time. The world looked a little brighter because I was sharing it with you.</p>
+          </article>
+          <article>
+            <span>27 Oct 2025</span>
+            <h3>When we grew even closer 🫶</h3>
+            <p>This was the time our bond became deeper, sweeter, and more real. I felt even more sure that you were becoming my favorite person.</p>
+          </article>
+          <article>
+            <span>21 Mar 2026</span>
+            <h3>Our first Eid together 🌙</h3>
+            <p>Celebrating Eid with you made the day feel extra blessed. It was not just a festival anymore, it was a memory wrapped in love.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section song-section" id="song">
+        <div class="section-heading">
+          <p class="eyebrow">Our special song</p>
+          <h2>A song for this feeling</h2>
+        </div>
+        <div class="song-player">
+          <div class="record" aria-hidden="true"><span></span></div>
+          <div class="song-copy">
+            <h3>Play the song that feels like us 🎵</h3>
+            <p>
+              This little song is now part of our story, ready whenever you press play.
+            </p>
+            <div class="song-controls">
+              <button class="button primary" id="songPlayButton" type="button">Play song</button>
+              <label class="music-toggle">
+                <input id="musicToggle" type="checkbox" checked />
+                <span>Background music</span>
+              </label>
+            </div>
+            <p class="song-status" id="songStatus" aria-live="polite">Your special song is ready.</p>
+          </div>
+          <audio id="specialSong" preload="metadata" loop>
+            <source src="assets/special-song.mpeg" type="audio/mpeg" />
+          </audio>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Memory wall</p>
+          <h2>Eight little pieces of us</h2>
+        </div>
+        <div class="gallery">
+          <figure class="memory-card">
+            <img src="assets/photo1.jpeg" alt="First meeting and first hug" />
+            <figcaption>
+              <strong>First meeting, first hug</strong>
+              <span>The day my heart found a warmth it still remembers.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo2.jpeg" alt="First day spent outside together" />
+            <figcaption>
+              <strong>First day outside together</strong>
+              <span>A simple day became special because your hand was in mine.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo3.jpeg" alt="The day we got to know each other better" />
+            <figcaption>
+              <strong>Getting closer</strong>
+              <span>The day we met again and understood each other a little more deeply.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo4.jpeg" alt="A close selfie together" />
+            <figcaption>
+              <strong>Softest kind of peace</strong>
+              <span>Some pictures do not need perfect poses, only two hearts feeling safe.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo5.jpeg" alt="Holding hands on first Eid together" />
+            <figcaption>
+              <strong>Our first Eid hold</strong>
+              <span>May we hold hands like this on every Eid, every year, always.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo6.jpeg" alt="Celebrating Eid together with smiles" />
+            <figcaption>
+              <strong>Eid smiles together</strong>
+              <span>May every Eid bring us this smile, this closeness, and this love.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo7.jpeg" alt="A night selfie together" />
+            <figcaption>
+              <strong>Even the night felt ours</strong>
+              <span>In the quiet glow of the night, being beside you was enough.</span>
+            </figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img src="assets/photo8.jpeg" alt="A cozy blue-toned photo together" />
+            <figcaption>
+              <strong>My favorite comfort</strong>
+              <span>You are the calm place my heart keeps choosing again and again.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section quiz" id="quiz">
+        <div class="section-heading">
+          <p class="eyebrow">Just us</p>
+          <h2>Fun couple quiz</h2>
+        </div>
+        <div class="quiz-box">
+          <div class="quiz-topline">
+            <span id="quizProgress">Question 1 of 5</span>
+            <strong id="quizScore">0 hearts</strong>
+          </div>
+          <p id="quizQuestion">What makes our daily talking feel special?</p>
+          <div class="quiz-options" id="quizOptions">
+            <button data-index="0">We can talk about tiny things and still enjoy it</button>
+            <button data-index="1">Only serious talks matter</button>
+            <button data-index="2">We need perfect topics every time</button>
+          </div>
+          <p id="quizResult" aria-live="polite"></p>
+          <button class="button primary quiz-next" id="quizNextButton" type="button">Next question</button>
+        </div>
+      </section>
+
+      <section class="section split" id="reasons">
+        <div class="section-heading">
+          <p class="eyebrow">Reasons why I love you</p>
+          <h2>A little universe of you</h2>
+          <p>Tap each little planet. Every one carries a reason my heart chooses you.</p>
+        </div>
+        <div class="reason-orbit">
+          <button class="reason-card" data-note="You make even a normal day feel special just by being part of it.">Your magic ✨</button>
+          <button class="reason-card" data-note="You listen in a way that makes my heart feel understood, not just heard.">Your care 🫶</button>
+          <button class="reason-card" data-note="Your messages can change my entire mood in one second.">Your vibe 💬</button>
+          <button class="reason-card" data-note="With you, love feels soft, real, peaceful, and exciting all at once.">Your love 💖</button>
+          <button class="reason-card" data-note="You are the person I want beside me in happy days and difficult days.">Your presence 🌙</button>
+          <button class="reason-card" data-note="You make me want to become better, kinder, and more patient.">Your effect 🌷</button>
+        </div>
+      </section>
+
+      <section class="section letter" id="letter">
+        <div class="letter-paper">
+          <p class="eyebrow">A letter for you</p>
+          <h2>My favorite part of this year was you.</h2>
+          <p>
+            Thank you for being my comfort, my happiness, my best conversation,
+            and my favorite reason to smile. This first year has given me memories
+            I will carry for a long time, and I hope this is only the beginning of
+            many more chapters with you.
+          </p>
+          <p class="signature">Forever yours</p>
+        </div>
+      </section>
+
+      <section class="section promise" id="surprise">
+        <div>
+          <p class="eyebrow">One last thing</p>
+          <h2>Open your surprise</h2>
+        </div>
+        <button class="button primary" id="surpriseButton">Reveal message</button>
+        <p class="surprise-message" id="surpriseMessage" aria-live="polite">
+			Happy 1st Anniversary Babe💞🎉❤️.
+			I loveeeeee youuuu soooooo muchhhhhh meriiii pyarrriiii Biwi, babe, baby, shoni, darling, mamma, baccha🙈💗. Me aap k sath bohot bohot bohottt khushh hu😚 hum hamesha saath rahege inshallah💯. Mujhe kabhi chhod k nhi jana babe🥰 meri jaan h tu babe tere bina me kuch nhi😘. mere pure life ka best year tha aap k sath hum aise hi hamesha sath rahege jaan🤩😍💯
+Ummmmahhhhhhhhhhhh 💋💋💋💋.
+         
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
