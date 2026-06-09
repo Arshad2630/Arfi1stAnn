@@ -24,7 +24,7 @@ function updateLoveCounter() {
   counterEls.loveHours.textContent = hours.toString().padStart(2, "0");
   counterEls.loveMinutes.textContent = minutes.toString().padStart(2, "0");
   counterEls.loveSeconds.textContent = seconds.toString().padStart(2, "0");
-  counterEls.message.textContent = `${days} days later, I still feel lucky that 27 May 2025 brought you into my life.`;
+  counterEls.message.textContent = `${days} days later, Alhamdulillah I still feel lucky that 27 May 2025 brought you into my life.`;
 }
 
 updateLoveCounter();
@@ -91,7 +91,7 @@ const quizQuestions = [
       "We need perfect topics every time",
     ],
     answer: 0,
-    note: "Exactly. Our little everyday talks are part of our magic.",
+    note: "Exactly. Mashallah, our little everyday talks are part of our magic.",
   },
   {
     question: "What is the sweetest thing about our communication?",
@@ -101,7 +101,7 @@ const quizQuestions = [
       "We only talk when everything is perfect",
     ],
     answer: 0,
-    note: "Yes. Feeling understood by you is one of my favorite feelings.",
+    note: "Yes. Alhamdulillah, feeling understood by you is one of my favorite feelings.",
   },
   {
     question: "What kind of vibe do we have together?",
@@ -111,7 +111,7 @@ const quizQuestions = [
       "Only random and confusing",
     ],
     answer: 0,
-    note: "That is us. Soft, silly, deep, and beautiful in our own way.",
+    note: "That is us. Mashallah, soft, silly, deep, and beautiful in our own way.",
   },
   {
     question: "What makes me happy when we talk?",
@@ -131,7 +131,7 @@ const quizQuestions = [
       "Letting silence become distance",
     ],
     answer: 0,
-    note: "Always. Honest hearts, soft words, and choosing us.",
+    note: "Always. Honest hearts, soft words, and Inshallah always choosing us.",
   },
   {
     question: "Who loves more?",
@@ -151,8 +151,8 @@ const quizQuestions = [
     question: "What are we?",
     options: ["Friends", "Unknown", "Husband-Wife"],
     answer: 2,
-    note: "Correct. Husband and wife by heart, forever.",
-    wrongNote: "No no, you are my wife forever.",
+    note: "Correct. Husband and wife by heart, Inshallah forever.",
+    wrongNote: "No no, you are my wife forever, Inshallah.",
   },
 ];
 
@@ -219,7 +219,7 @@ quizNextButton.addEventListener("click", () => {
     return;
   }
 
-  quizResult.textContent = `Final score: ${quizScore}/${quizQuestions.length}. But honestly, you already win my heart every day.`;
+  quizResult.textContent = `Final score: ${quizScore}/${quizQuestions.length}. But honestly, Mashallah you already win my heart every day.`;
   quizNextButton.disabled = true;
 });
 
