@@ -133,6 +133,27 @@ const quizQuestions = [
     answer: 0,
     note: "Always. Honest hearts, soft words, and choosing us.",
   },
+  {
+    question: "Who loves more?",
+    options: ["Arshad", "Firdous"],
+    answer: 0,
+    note: "Correct. Arshad loves more, with his whole heart.",
+    wrongNote: "Arshad loves more till now, but from today it is equal love from both.",
+  },
+  {
+    question: "Do you love me?",
+    options: ["Yes", "No"],
+    answer: null,
+    note: "You do not have an option here, you have to love me anyway.",
+    anyAnswer: true,
+  },
+  {
+    question: "What are we?",
+    options: ["Friends", "Unknown", "Husband-Wife"],
+    answer: 2,
+    note: "Correct. Husband and wife by heart, forever.",
+    wrongNote: "No no, you are my wife forever.",
+  },
 ];
 
 let quizIndex = 0;
@@ -171,16 +192,18 @@ function answerQuiz(selectedIndex, selectedButton) {
   answered = true;
 
   const current = quizQuestions[quizIndex];
-  const isCorrect = selectedIndex === current.answer;
+  const isCorrect = current.anyAnswer || selectedIndex === current.answer;
   if (isCorrect) quizScore += 1;
 
   [...quizOptions.children].forEach((button, index) => {
     button.disabled = true;
-    if (index === current.answer) button.classList.add("correct");
+    if (current.anyAnswer || index === current.answer) button.classList.add("correct");
   });
 
   if (!isCorrect) selectedButton.classList.add("wrong");
-  quizResult.textContent = isCorrect ? current.note : `Cute answer, but my heart says: ${current.options[current.answer]}.`;
+  quizResult.textContent = isCorrect
+    ? current.note
+    : current.wrongNote || `Cute answer, but my heart says: ${current.options[current.answer]}.`;
   quizScoreEl.textContent = `${quizScore} ${quizScore === 1 ? "heart" : "hearts"}`;
 }
 
