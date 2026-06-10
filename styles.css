@@ -94,10 +94,7 @@ main {
   align-items: center;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(86, 24, 54, 0.78) 0%, rgba(207, 93, 120, 0.44) 42%, rgba(255, 247, 250, 0.2) 72%, rgba(255, 247, 250, 0.08) 100%),
-    radial-gradient(circle at 12% 26%, rgba(255, 241, 189, 0.24), transparent 18rem),
-    url("assets/homepage-couple-hero.png") center / cover no-repeat,
-    radial-gradient(circle at 80% 30%, rgba(240, 196, 109, 0.2), transparent 28rem);
+    url("assets/homepage-couple-hero.png") center / cover no-repeat;
   color: var(--white);
 }
 
@@ -153,8 +150,8 @@ main {
 }
 
 .hero .eyebrow {
-  color: #ffe1ea;
-  text-shadow: 0 3px 16px rgba(86, 24, 54, 0.45);
+  color: #ffe8ad;
+  text-shadow: 0 3px 18px rgba(86, 24, 54, 0.62);
 }
 
 h1,
@@ -172,7 +169,7 @@ h1 {
 }
 
 .hero h1 {
-  text-shadow: 0 5px 26px rgba(86, 24, 54, 0.52);
+  text-shadow: 0 5px 30px rgba(86, 24, 54, 0.72);
 }
 
 h2 {
@@ -1270,7 +1267,6 @@ figcaption span {
   .hero {
     min-height: 100svh;
     background:
-      linear-gradient(180deg, rgba(86, 24, 54, 0.3) 0%, rgba(207, 93, 120, 0.58) 48%, rgba(86, 24, 54, 0.92) 100%),
       url("assets/homepage-couple-hero.png") 36% center / cover no-repeat;
   }
 
