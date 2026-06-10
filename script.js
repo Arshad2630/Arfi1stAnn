@@ -30,6 +30,22 @@ function updateLoveCounter() {
 updateLoveCounter();
 setInterval(updateLoveCounter, 1000);
 
+const typingTitle = document.querySelector(".typing-title");
+if (typingTitle) {
+  const titleText = typingTitle.dataset.text || typingTitle.textContent;
+  typingTitle.textContent = "";
+  typingTitle.classList.add("typing-ready");
+
+  [...titleText].forEach((letter, index) => {
+    setTimeout(() => {
+      typingTitle.textContent += letter;
+      if (index === [...titleText].length - 1) {
+        setTimeout(() => typingTitle.classList.remove("typing-ready"), 1200);
+      }
+    }, 70 * index);
+  });
+}
+
 document.querySelectorAll(".reason-card").forEach((card) => {
   const original = card.innerHTML;
   card.addEventListener("click", () => {

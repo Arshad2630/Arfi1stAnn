@@ -94,6 +94,7 @@ main {
   align-items: center;
   overflow: hidden;
   background:
+    linear-gradient(90deg, rgba(42, 15, 30, 0.78) 0%, rgba(42, 15, 30, 0.5) 38%, rgba(42, 15, 30, 0.12) 72%),
     url("assets/homepage-couple-hero.png") center / cover no-repeat;
   color: var(--white);
 }
@@ -108,7 +109,7 @@ main {
 
 .hero-copy {
   grid-column: 2;
-  width: min(46rem, 92vw);
+  width: min(50rem, 92vw);
   margin-right: auto;
   padding: 9rem 0 7rem;
   z-index: 3;
@@ -172,6 +173,15 @@ h1 {
   text-shadow: 0 5px 30px rgba(86, 24, 54, 0.72);
 }
 
+.typing-title {
+  display: inline;
+}
+
+.typing-title.typing-ready {
+  border-right: 0.08em solid #fff1bd;
+  animation: caret-blink 780ms step-end infinite;
+}
+
 h2 {
   font-size: clamp(2rem, 4vw, 4rem);
 }
@@ -186,9 +196,9 @@ p {
 
 .hero-copy p:not(.eyebrow) {
   max-width: 42rem;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.9);
   font-size: clamp(1rem, 1.6vw, 1.18rem);
-  text-shadow: 0 3px 18px rgba(0, 20, 32, 0.38);
+  text-shadow: 0 3px 20px rgba(42, 15, 30, 0.68);
 }
 
 .hero-actions {
@@ -1155,6 +1165,12 @@ figcaption span {
   }
 }
 
+@keyframes caret-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1267,6 +1283,7 @@ figcaption span {
   .hero {
     min-height: 100svh;
     background:
+      linear-gradient(180deg, rgba(42, 15, 30, 0.28) 0%, rgba(42, 15, 30, 0.42) 45%, rgba(42, 15, 30, 0.86) 100%),
       url("assets/homepage-couple-hero.png") 36% center / cover no-repeat;
   }
 
