@@ -93,7 +93,7 @@ main {
   align-items: center;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(24, 61, 70, 0.78), rgba(62, 43, 72, 0.7) 58%, rgba(207, 93, 120, 0.54)),
+    linear-gradient(90deg, rgba(24, 37, 43, 0.88) 0%, rgba(24, 37, 43, 0.58) 38%, rgba(24, 37, 43, 0.18) 68%, rgba(24, 37, 43, 0.08) 100%),
     url("assets/anniversary-hero.png") center / cover no-repeat,
     radial-gradient(circle at 80% 30%, rgba(240, 196, 109, 0.42), transparent 28rem);
   color: var(--white);
@@ -222,6 +222,7 @@ p {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  display: none;
 }
 
 .moon {
