@@ -240,14 +240,35 @@ const certificateResult = document.getElementById("certificateResult");
 const certificateBrideName = document.getElementById("certificateBrideName");
 const certificateBrideInfo = document.getElementById("certificateBrideInfo");
 const signedBrideName = document.getElementById("signedBrideName");
+const signatureError = document.getElementById("signatureError");
 
 signCertificateButton.addEventListener("click", () => {
-  const name = brideSignature.value.trim() || "Firdous";
+  const name = brideSignature.value.trim();
+
+  if (!name) {
+    certificateResult.classList.remove("show");
+    brideSignature.classList.add("invalid");
+    signatureError.textContent = "Signature required, meri jaan. Type your name first to become officially married with Arshad.";
+    brideSignature.focus();
+    return;
+  }
+
+  brideSignature.classList.remove("invalid");
+  signatureError.textContent = "";
   certificateBrideName.textContent = name;
   certificateBrideInfo.textContent = name;
   signedBrideName.textContent = name;
+  certificateResult.classList.remove("show");
+  void certificateResult.offsetWidth;
   certificateResult.classList.add("show");
   signCertificateButton.textContent = "Signed forever";
+});
+
+brideSignature.addEventListener("input", () => {
+  if (brideSignature.value.trim()) {
+    brideSignature.classList.remove("invalid");
+    signatureError.textContent = "";
+  }
 });
 
 const surpriseButton = document.getElementById("surpriseButton");

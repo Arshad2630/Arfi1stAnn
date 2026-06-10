@@ -923,6 +923,20 @@ figcaption span {
   color: var(--ink);
   background: var(--white);
   font: 800 1rem "Segoe UI", system-ui, sans-serif;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.signature-input-wrap input.invalid {
+  border-color: rgba(207, 93, 120, 0.86);
+  box-shadow: 0 0 0 4px rgba(207, 93, 120, 0.12);
+  animation: signature-shake 360ms ease;
+}
+
+.signature-error {
+  min-height: 1.6rem;
+  margin: 0.55rem 0 0;
+  color: var(--rose);
+  font-weight: 850;
 }
 
 .certificate-result {
@@ -943,7 +957,7 @@ figcaption span {
   transform: translateY(0);
   padding: 1rem;
   margin-top: 1rem;
-  animation: certificate-signed 620ms ease both;
+  animation: certificate-signed 900ms cubic-bezier(.2, .9, .22, 1.18) both;
 }
 
 .certificate-result span {
@@ -964,6 +978,36 @@ figcaption span {
   margin: 0.45rem 0 0;
   color: rgba(255, 255, 255, 0.82);
   font-weight: 800;
+}
+
+.cert-spark {
+  position: absolute;
+  color: var(--gold);
+  opacity: 0;
+  font-size: 1.4rem;
+  pointer-events: none;
+}
+
+.certificate-result.show .cert-spark {
+  animation: cert-sparkle 1.4s ease both;
+}
+
+.cert-spark-one {
+  right: 1.2rem;
+  top: 0.8rem;
+}
+
+.cert-spark-two {
+  right: 4.2rem;
+  bottom: 1rem;
+  color: #ffb5c3;
+  animation-delay: 120ms !important;
+}
+
+.cert-spark-three {
+  left: 1.1rem;
+  bottom: 1rem;
+  animation-delay: 220ms !important;
 }
 
 .letter-paper {
@@ -1134,13 +1178,42 @@ figcaption span {
 
 @keyframes certificate-signed {
   0% {
-    transform: scale(0.98) rotate(-0.4deg);
+    transform: translateY(18px) scale(0.94) rotate(-1deg);
+    filter: blur(2px);
   }
-  60% {
-    transform: scale(1.01) rotate(0.3deg);
+  45% {
+    transform: translateY(-8px) scale(1.025) rotate(0.5deg);
+    filter: blur(0);
   }
   100% {
-    transform: scale(1) rotate(0);
+    transform: translateY(0) scale(1) rotate(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes cert-sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.4) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-26px) scale(1.25) rotate(22deg);
+  }
+}
+
+@keyframes signature-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
   }
 }
 

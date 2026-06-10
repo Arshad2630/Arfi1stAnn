@@ -231,7 +231,7 @@
       <section class="section certificate-section" id="certificate">
         <div class="section-heading">
           <p class="eyebrow">Official ARFI document</p>
-          <h2>Funny little marriage certificate</h2>
+          <h2>Marriage certificate</h2>
         </div>
         <div class="marriage-certificate">
           <div class="certificate-seal" aria-hidden="true">❤</div>
@@ -256,7 +256,7 @@
             </div>
             <div>
               <dt>Marriage Type</dt>
-              <dd>Lifetime cute trouble</dd>
+              <dd>Lifetime</dd>
             </div>
           </dl>
           <p class="certificate-vow">
@@ -266,11 +266,15 @@
           <div class="signature-row">
             <label for="brideSignature">Bride signature</label>
             <div class="signature-input-wrap">
-              <input id="brideSignature" type="text" placeholder="Type your name here" autocomplete="off" />
+              <input id="brideSignature" type="text" placeholder="Type your name here" autocomplete="off" aria-describedby="signatureError" />
               <button class="button primary" id="signCertificateButton" type="button">Sign certificate</button>
             </div>
+            <p class="signature-error" id="signatureError" aria-live="polite"></p>
           </div>
           <div class="certificate-result" id="certificateResult" aria-live="polite">
+            <span class="cert-spark cert-spark-one">✦</span>
+            <span class="cert-spark cert-spark-two">❤</span>
+            <span class="cert-spark cert-spark-three">✦</span>
             <span>Signed with love</span>
             <strong id="signedBrideName">Firdous</strong>
             <p>You are married with Arshad now. No escape, only love, Inshallah forever 💍❤️</p>
@@ -329,7 +333,7 @@
             I will carry for a long time, and Inshallah this is only the beginning of
             many more chapters with you.
           </p>
-          <p class="signature">Forever yours</p>
+          <p class="signature">Forever ARFI ❤️</p>
         </div>
       </section>
 
