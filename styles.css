@@ -809,6 +809,163 @@ figcaption span {
   margin-top: 1rem;
 }
 
+.certificate-section {
+  padding-top: 4rem;
+}
+
+.marriage-certificate {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(207, 93, 120, 0.18);
+  border-radius: 1.5rem;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 241, 0.96)),
+    radial-gradient(circle at 88% 12%, rgba(240, 196, 109, 0.3), transparent 15rem);
+  box-shadow: var(--shadow);
+}
+
+.marriage-certificate::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px dashed rgba(207, 93, 120, 0.28);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.certificate-seal {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #332127;
+  background: linear-gradient(135deg, var(--gold), #ffb59f);
+  box-shadow: 0 18px 45px rgba(240, 196, 109, 0.32);
+  font-size: 1.8rem;
+}
+
+.certificate-label {
+  margin: 0 0 1rem;
+  color: var(--rose);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.marriage-certificate h3 {
+  max-width: 12ch;
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+}
+
+.certificate-intro,
+.certificate-vow {
+  max-width: 48rem;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.certificate-info {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+
+.certificate-info div {
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(39, 29, 43, 0.08);
+}
+
+.certificate-info dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.certificate-info dd {
+  margin: 0.3rem 0 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.signature-row {
+  margin-top: 1.6rem;
+}
+
+.signature-row label {
+  display: block;
+  color: var(--ink);
+  font-weight: 900;
+  margin-bottom: 0.55rem;
+}
+
+.signature-input-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+.signature-input-wrap input {
+  min-height: 3.15rem;
+  border: 1px solid rgba(39, 29, 43, 0.14);
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  color: var(--ink);
+  background: var(--white);
+  font: 800 1rem "Segoe UI", system-ui, sans-serif;
+}
+
+.certificate-result {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  overflow: hidden;
+  margin-top: 0;
+  border-radius: 1.1rem;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--teal), #6a2e58);
+  transition: max-height 420ms ease, opacity 300ms ease, transform 360ms ease, padding 360ms ease, margin-top 360ms ease;
+}
+
+.certificate-result.show {
+  max-height: 14rem;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 1rem;
+  margin-top: 1rem;
+  animation: certificate-signed 620ms ease both;
+}
+
+.certificate-result span {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.certificate-result strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.certificate-result p {
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 800;
+}
+
 .letter-paper {
   border-radius: 1.5rem;
   padding: clamp(1.4rem, 4vw, 4rem);
@@ -975,6 +1132,18 @@ figcaption span {
   }
 }
 
+@keyframes certificate-signed {
+  0% {
+    transform: scale(0.98) rotate(-0.4deg);
+  }
+  60% {
+    transform: scale(1.01) rotate(0.3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
   @media (max-width: 820px) {
   .hero-copy {
     padding-top: 8rem;
@@ -992,7 +1161,9 @@ figcaption span {
   .gallery,
   .promise,
   .song-player,
-  .reason-board {
+  .reason-board,
+  .certificate-info,
+  .signature-input-wrap {
     grid-template-columns: 1fr;
   }
 
@@ -1068,6 +1239,13 @@ figcaption span {
 
   .reason-card {
     min-height: 10.5rem;
+  }
+
+  .certificate-seal {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 1rem;
   }
 
   .photo {

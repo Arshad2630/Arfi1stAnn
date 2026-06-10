@@ -234,6 +234,22 @@ quizNextButton.addEventListener("click", () => {
 
 renderQuizQuestion();
 
+const brideSignature = document.getElementById("brideSignature");
+const signCertificateButton = document.getElementById("signCertificateButton");
+const certificateResult = document.getElementById("certificateResult");
+const certificateBrideName = document.getElementById("certificateBrideName");
+const certificateBrideInfo = document.getElementById("certificateBrideInfo");
+const signedBrideName = document.getElementById("signedBrideName");
+
+signCertificateButton.addEventListener("click", () => {
+  const name = brideSignature.value.trim() || "Firdous";
+  certificateBrideName.textContent = name;
+  certificateBrideInfo.textContent = name;
+  signedBrideName.textContent = name;
+  certificateResult.classList.add("show");
+  signCertificateButton.textContent = "Signed forever";
+});
+
 const surpriseButton = document.getElementById("surpriseButton");
 const surpriseMessage = document.getElementById("surpriseMessage");
 
