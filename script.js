@@ -31,10 +31,14 @@ updateLoveCounter();
 setInterval(updateLoveCounter, 1000);
 
 document.querySelectorAll(".reason-card").forEach((card) => {
-  const original = card.textContent;
+  const original = card.innerHTML;
   card.addEventListener("click", () => {
     const revealed = card.classList.toggle("revealed");
-    card.textContent = revealed ? card.dataset.note : original;
+    if (revealed) {
+      card.textContent = card.dataset.note;
+    } else {
+      card.innerHTML = original;
+    }
   });
 });
 

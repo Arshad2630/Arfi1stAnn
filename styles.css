@@ -522,66 +522,130 @@ p {
   font-weight: 800;
 }
 
-.reason-orbit {
-  min-height: 31rem;
-  border-radius: 1.5rem;
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+.reasons-section {
+  width: 100%;
+  padding: 5rem max(4vw, 1rem);
   background:
-    radial-gradient(circle at 50% 50%, rgba(240, 196, 109, 0.32), transparent 8rem),
-    linear-gradient(135deg, rgba(24, 61, 70, 0.94), rgba(69, 33, 58, 0.92));
-  box-shadow: var(--shadow);
+    radial-gradient(circle at 18% 18%, rgba(240, 196, 109, 0.24), transparent 18rem),
+    linear-gradient(135deg, rgba(24, 61, 70, 0.96), rgba(69, 33, 58, 0.95) 55%, rgba(207, 93, 120, 0.86));
+  color: var(--white);
+}
+
+.reasons-heading,
+.reason-board {
+  width: min(1120px, 92vw);
+  margin-inline: auto;
+}
+
+.reasons-heading .eyebrow {
+  color: var(--gold);
+}
+
+.reasons-heading p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.reason-board {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.reason-feature,
+.reason-card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.reason-feature {
+  min-height: 29rem;
+  border-radius: 1.4rem;
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
   overflow: hidden;
 }
 
-.reason-orbit::before {
-  content: "ARFI";
+.reason-feature::before {
+  content: "";
   position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: 6.3rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #352126;
-  background: linear-gradient(135deg, var(--gold), #ffb59f);
+  inset: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 232, 173, 0.28);
+}
+
+.reason-feature span {
+  position: relative;
+  width: fit-content;
+  padding: 0.55rem 0;
+  color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  box-shadow: 0 0 50px rgba(240, 196, 109, 0.45);
+  letter-spacing: 0.08em;
+}
+
+.reason-feature h3 {
+  position: relative;
+  max-width: 11ch;
+  margin-top: 1rem;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+}
+
+.reason-feature p {
+  position: relative;
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 0;
+}
+
+.reason-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .reason-card {
-  min-height: 8rem;
+  min-height: 13rem;
+  border-radius: 1.15rem;
   padding: 1.2rem;
-  border-radius: 999px;
   color: var(--white);
   cursor: pointer;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
-  text-align: center;
-  transition: transform 180ms ease, background 180ms ease;
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.22);
-  z-index: 1;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  text-align: left;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
   overflow-wrap: anywhere;
+}
+
+.reason-card span {
+  display: block;
+  width: fit-content;
+  margin-bottom: 2rem;
+  color: var(--gold);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
 }
 
 .reason-card:hover,
 .reason-card.revealed {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(255, 249, 244, 0.94);
+  transform: translateY(-5px);
+  background: rgba(255, 249, 244, 0.96);
+  color: var(--ink);
 }
 
 .reason-card.revealed {
   font-family: "Segoe UI", system-ui, sans-serif;
   color: var(--muted);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .song-player {
@@ -861,7 +925,8 @@ figcaption span {
   .split,
   .gallery,
   .promise,
-  .song-player {
+  .song-player,
+  .reason-board {
     grid-template-columns: 1fr;
   }
 
@@ -914,7 +979,7 @@ figcaption span {
     width: 100%;
   }
 
-  .reason-orbit,
+  .reason-notes,
   .quiz-options {
     grid-template-columns: 1fr;
   }
@@ -932,13 +997,16 @@ figcaption span {
     font-size: 2.8rem;
   }
 
-  .reason-orbit {
-    min-height: auto;
-    padding-top: 8.2rem;
+  .reasons-section {
+    padding-inline: 0;
   }
 
-  .reason-orbit::before {
-    top: 4.5rem;
+  .reason-feature {
+    min-height: 24rem;
+  }
+
+  .reason-card {
+    min-height: 10.5rem;
   }
 
   .photo {
