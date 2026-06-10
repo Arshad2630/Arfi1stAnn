@@ -234,6 +234,11 @@ quizNextButton.addEventListener("click", () => {
 
 renderQuizQuestion();
 
-document.getElementById("surpriseButton").addEventListener("click", () => {
-  document.getElementById("surpriseMessage").classList.add("show");
+const surpriseButton = document.getElementById("surpriseButton");
+const surpriseMessage = document.getElementById("surpriseMessage");
+
+surpriseButton.addEventListener("click", () => {
+  const isOpen = surpriseMessage.classList.toggle("show");
+  surpriseButton.textContent = isOpen ? "Close message" : "Reveal message";
+  surpriseButton.setAttribute("aria-expanded", isOpen.toString());
 });

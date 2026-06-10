@@ -826,23 +826,111 @@ figcaption span {
 .promise {
   border-radius: 1.5rem;
   padding: clamp(1.4rem, 4vw, 3rem);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: 1.2rem;
   margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(240, 196, 109, 0.28), transparent 13rem),
+    rgba(255, 255, 255, 0.78);
+}
+
+.promise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(207, 93, 120, 0.08), transparent 42%),
+    radial-gradient(circle at 12% 85%, rgba(140, 207, 192, 0.16), transparent 16rem);
+}
+
+.promise-copy,
+.promise .button,
+.surprise-message {
+  position: relative;
+  z-index: 1;
 }
 
 .surprise-message {
-  display: none;
-  max-width: 29rem;
+  grid-column: 1 / -1;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  overflow: hidden;
+  max-width: none;
   margin: 0;
+  border: 1px solid rgba(207, 93, 120, 0.18);
+  border-radius: 1.35rem;
   color: var(--muted);
-  font-weight: 800;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 241, 0.96)),
+    radial-gradient(circle at 88% 18%, rgba(240, 196, 109, 0.28), transparent 12rem);
+  box-shadow: 0 26px 80px rgba(39, 29, 43, 0.14);
+  transition:
+    max-height 520ms ease,
+    opacity 360ms ease,
+    transform 420ms ease,
+    padding 420ms ease,
+    margin-top 420ms ease;
 }
 
 .surprise-message.show {
-  display: block;
+  max-height: 42rem;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  padding: clamp(1.1rem, 3vw, 2rem);
+  margin-top: 0.6rem;
+  animation: love-pop 680ms ease both;
+}
+
+.surprise-message p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-weight: 750;
+  line-height: 1.75;
+}
+
+.surprise-message .surprise-title {
+  margin-top: 0;
+  color: var(--rose);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 4vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.surprise-kiss {
+  color: var(--ink) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+.surprise-heart {
+  position: absolute;
+  color: rgba(207, 93, 120, 0.2);
+  font-size: 2rem;
+  animation: heart-float 2.8s ease-in-out infinite;
+}
+
+.heart-one {
+  right: 1.3rem;
+  top: 1rem;
+}
+
+.heart-two {
+  right: 4rem;
+  bottom: 1.3rem;
+  animation-delay: 0.5s;
+}
+
+.heart-three {
+  left: 1.2rem;
+  bottom: 1rem;
+  animation-delay: 1s;
 }
 
 @keyframes drift {
@@ -862,6 +950,28 @@ figcaption span {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes love-pop {
+  0% {
+    filter: blur(2px);
+  }
+  55% {
+    transform: translateY(-4px) scale(1.012);
+  }
+  100% {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heart-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(8deg);
   }
 }
 
